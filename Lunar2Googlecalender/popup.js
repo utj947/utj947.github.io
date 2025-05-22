@@ -132,11 +132,12 @@ async function getSolarDate(year, month, day) {
   }
 }
 
-async function addCalendarEvent(token, solarDate, eventName) {
+async function addCalendarEvent(token, solarDate, eventName, colorId) {
   const event = {
     summary: eventName,
     start: { date: solarDate },
-    end: { date: solarDate }
+    end: { date: solarDate },
+    colorId: colorId || undefined // colorId가 없으면 기본 색상 사용
   };
 
   const response = await fetch('https://www.googleapis.com/calendar/v3/calendars/primary/events', {
@@ -154,74 +155,110 @@ async function addCalendarEvent(token, solarDate, eventName) {
   }
 }
 
-document.getElementById('addEvent').addEventListener('click', async () => {
-  const month = document.getElementById('month').value;
-  const day = document.getElementById('day').value;
-  const eventName = document.getElementById('eventName').value;
-  const yearsToAddInput = document.getElementById('yearsToAdd').value;
-  const status = document.getElementById('status');
+function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 
-  // 입력값 검증
-  let missingFields = [];
-  if (!month) missingFields.push('음력 월');
-  if (!day) missingFields.push('음력 일');
-  if (!eventName) missingFields.push('이벤트 이름');
-  if (!yearsToAddInput) missingFields.push('추가할 연도 수');
-  if (missingFields.length > 0) {
-    status.textContent = `${missingFields.join(', ')}을 입력해주세요.`;
-    return;
-  }
+// 색상 선택 버튼 이벤트 처리
+document.addEventListener('DOMContentLoaded', () => {
+  const colorButtons = document.querySelectorAll('.colorBtn');
+  let selectedColorId = null;
 
-  const monthNum = parseInt(month, 10);
-  const dayNum = parseInt(day, 10);
-  const yearsToAddNum = parseInt(yearsToAddInput, 10);
+  // 저장된 색상 로드
+  chrome.storage.local.get('selectedColorId', (data) => {
+    if (data.selectedColorId) {
+      selectedColorId = data.selectedColorId;
+      const selectedButton = document.querySelector(`.colorBtn[data-color-id="${selectedColorId}"]`);
+      if (selectedButton) {
+        selectedButton.style.border = '2px solid black';
+      }
+    }
+  });
 
-  if (isNaN(monthNum) || monthNum < 1 || monthNum > 12) {
-    status.textContent = '음력 월은 1에서 12 사이로 입력해주세요.';
-    return;
-  }
-  if (isNaN(dayNum) || dayNum < 1 || dayNum > 30) {
-    status.textContent = '음력 일은 1에서 30 사이로 입력해주세요.';
-    return;
-  }
-  if (isNaN(yearsToAddNum) || yearsToAddNum < 1 || yearsToAddNum > 50) {
-    status.textContent = '추가할 연도 수는 1에서 50 사이로 입력해주세요.';
-    return;
-  }
-
-  const paddedMonth = monthNum.toString().padStart(2, '0');
-  const paddedDay = dayNum.toString().padStart(2, '0');
-
-  // 연도 배열 생성
-  const currentYear = new Date().getFullYear();
-  const endYear = currentYear + yearsToAddNum;
-  const yearsToAdd = Array.from({ length: yearsToAddNum }, (_, i) => currentYear + i);
-
-  status.textContent = `${currentYear}년부터 ${endYear}년까지 이벤트를 추가하는 중...`;
-
-  try {
-    const token = await getAuthToken();
-
-    // 음력 날짜 저장
-    await chrome.storage.local.set({
-      lunarBirthday: { month: paddedMonth, day: paddedDay, eventName }
+  colorButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      // 이전 선택 해제
+      colorButtons.forEach(btn => btn.style.border = '2px solid transparent');
+      // 새 선택 표시
+      button.style.border = '2px solid black';
+      selectedColorId = button.getAttribute('data-color-id');
+      // 선택된 색상 저장
+      chrome.storage.local.set({ selectedColorId });
     });
+  });
 
-    // 병렬로 이벤트 추가
-    const results = await Promise.all(
-      yearsToAdd.map(async (year) => {
+  document.getElementById('addEvent').addEventListener('click', async () => {
+    const month = document.getElementById('month').value;
+    const day = document.getElementById('day').value;
+    const eventName = document.getElementById('eventName').value;
+    const yearsToAddInput = document.getElementById('yearsToAdd').value;
+    const status = document.getElementById('status');
+
+    // 입력값 검증
+    let missingFields = [];
+    if (!month) missingFields.push('음력 월');
+    if (!day) missingFields.push('음력 일');
+    if (!eventName) missingFields.push('이벤트 이름');
+    if (!yearsToAddInput) missingFields.push('추가할 연도 수');
+    if (!selectedColorId) missingFields.push('이벤트 색상');
+    if (missingFields.length > 0) {
+      status.textContent = `${missingFields.join(', ')}을 입력해주세요.`;
+      return;
+    }
+
+    const monthNum = parseInt(month, 10);
+    const dayNum = parseInt(day, 10);
+    const yearsToAddNum = parseInt(yearsToAddInput, 10);
+
+    if (isNaN(monthNum) || monthNum < 1 || monthNum > 12) {
+      status.textContent = '음력 월은 1에서 12 사이로 입력해주세요.';
+      return;
+    }
+    if (isNaN(dayNum) || dayNum < 1 || dayNum > 30) {
+      status.textContent = '음력 일은 1에서 30 사이로 입력해주세요.';
+      return;
+    }
+    if (isNaN(yearsToAddNum) || yearsToAddNum < 1 || yearsToAddNum > 50) {
+      status.textContent = '추가할 연도 수는 1에서 50 사이로 입력해주세요.';
+      return;
+    }
+
+    const paddedMonth = monthNum.toString().padStart(2, '0');
+    const paddedDay = dayNum.toString().padStart(2, '0');
+
+    // 연도 배열 생성
+    const currentYear = new Date().getFullYear();
+    const endYear = currentYear + yearsToAddNum;
+    const yearsToAdd = Array.from({ length: yearsToAddNum }, (_, i) => currentYear + i);
+
+    status.textContent = `${currentYear}년부터 ${endYear}년까지 이벤트를 추가하는 중...(다른곳 클릭시 중단됨)`;
+
+    try {
+      const token = await getAuthToken();
+
+      // 음력 날짜 및 색상 저장
+      await chrome.storage.local.set({
+        lunarBirthday: { month: paddedMonth, day: paddedDay, eventName, colorId: selectedColorId }
+      });
+
+      // 순차적으로 이벤트 추가
+      const results = [];
+      for (let i = 0; i < yearsToAdd.length; i++) {
+        const year = yearsToAdd[i];
+        status.textContent = `${i + 1}/${yearsToAddNum}년 추가중...(다른곳 클릭시 중단됨)`;
         const solarDate = await getSolarDate(year.toString(), paddedMonth, paddedDay);
-        await addCalendarEvent(token, solarDate, eventName);
-        return `${year}년: ${solarDate}`;
-      })
-    );
+        await addCalendarEvent(token, solarDate, eventName, selectedColorId);
+        results.push(`${year}년: ${solarDate}`);
+        await delay(500); // 500ms 지연
+      }
 
-    // 이전 형식으로 결과 표시
-    status.textContent = `음력 ${month}월 ${day}일에 해당하는 양력 날짜가 캘린더에 추가되었습니다:\n${results.join('\n')}`;
-  } catch (error) {
-    status.textContent = error.message.includes('Failed to fetch')
-      ? '인터넷 연결을 확인해주세요.'
-      : error.message;
-    console.error(error);
-  }
+      // 이전 형식으로 결과 표시
+      status.textContent = `음력 ${month}월 ${day}일에 해당하는 양력 날짜가 캘린더에 추가되었습니다:\n${results.join('\n')}`;
+    } catch (error) {
+      status.textContent = error.message.includes('Failed to fetch')
+        ? '인터넷 연결을 확인해주세요.'
+        : error.message;
+      console.error(error);
+    }
+  });
 });

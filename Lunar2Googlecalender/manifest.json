@@ -23,7 +23,7 @@
     "service_worker": "background.js"
   },
   "oauth2": {
-    "client_id": "set_your_client_id.apps.googleusercontent.com",
+    "client_id": "your-client-id.apps.googleusercontent.com",
     "scopes": [
       "https://www.googleapis.com/auth/calendar.events"
     ]

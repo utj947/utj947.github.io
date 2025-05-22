@@ -25,22 +25,41 @@
   <h3>음력 생일을 구글 캘린더에 추가</h3>
   <div class="input-group">
     <label for="month">음력 월 입력(1-12)</label>
-    <input type="number" id="month" min="1" max="12" placeholder="01">
+    <input type="number" id="month" min="1" max="12" placeholder="4">
   </div>
   <div class="input-group">
     <label for="day">음력 일 입력(1-30)</label>
-    <input type="number" id="day" min="1" max="30" placeholder="01">
+    <input type="number" id="day" min="1" max="30" placeholder="7">
   </div>
   <div class="input-group">
     <label for="eventName">이벤트 이름 입력</label>
-    <input type="text" id="eventName" placeholder="생일">
+    <input type="text" id="eventName" placeholder="내 생일">
   </div>
   <div class="input-group">
     <label for="yearsToAdd">올해부터 몇 년 추가할까요? (최대50년)</label>
-    <input type="number" id="yearsToAdd" min="1" max="50" placeholder="1">
+    <input type="number" id="yearsToAdd" min="1" max="50" placeholder="5">
+  </div>
+  <div style="margin-bottom: 15px;">
+    <label>이벤트 색상 선택</label>
+    <div id="colorPicker" style="display: flex; flex-wrap: wrap; gap: 5px;">
+      <button type="button" class="colorBtn" data-color-id="1" style="background-color: #7986CB; width: 30px; height: 30px; border: 2px solid transparent; cursor: pointer; border-radius: 50%;"></button>
+      <button type="button" class="colorBtn" data-color-id="2" style="background-color: #33B679; width: 30px; height: 30px; border: 2px solid transparent; cursor: pointer; border-radius: 50%;"></button>
+      <button type="button" class="colorBtn" data-color-id="3" style="background-color: #8E24AA; width: 30px; height: 30px; border: 2px solid transparent; cursor: pointer; border-radius: 50%;"></button>
+      <button type="button" class="colorBtn" data-color-id="4" style="background-color: #E67C73; width: 30px; height: 30px; border: 2px solid transparent; cursor: pointer; border-radius: 50%;"></button>
+      <button type="button" class="colorBtn" data-color-id="5" style="background-color: #F6BF26; width: 30px; height: 30px; border: 2px solid transparent; cursor: pointer; border-radius: 50%;"></button>
+      <button type="button" class="colorBtn" data-color-id="6" style="background-color: #F4511E; width: 30px; height: 30px; border: 2px solid transparent; cursor: pointer; border-radius: 50%;"></button>
+      <button type="button" class="colorBtn" data-color-id="7" style="background-color: #039BE5; width: 30px; height: 30px; border: 2px solid transparent; cursor: pointer; border-radius: 50%;"></button>
+      <button type="button" class="colorBtn" data-color-id="8" style="background-color: #616161; width: 30px; height: 30px; border: 2px solid transparent; cursor: pointer; border-radius: 50%;"></button>
+      <button type="button" class="colorBtn" data-color-id="9" style="background-color: #3F51B5; width: 30px; height: 30px; border: 2px solid transparent; cursor: pointer; border-radius: 50%;"></button>
+      <button type="button" class="colorBtn" data-color-id="10" style="background-color: #0B8043; width: 30px; height: 30px; border: 2px solid transparent; cursor: pointer; border-radius: 50%;"></button>
+      <button type="button" class="colorBtn" data-color-id="11" style="background-color: #D81B60; width: 30px; height: 30px; border: 2px solid transparent; cursor: pointer; border-radius: 50%;"></button>
+    </div>
+  </div>
   </div>
   <button id="addEvent">구글 캘린더에 추가하기</button>
-  <p id="status"></p>
+  <div>
+    <pre id="status"></pre>
+  </div>
   <script src="popup.js"></script>
 </body>
 </html>
