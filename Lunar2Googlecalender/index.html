@@ -40,9 +40,11 @@
             margin-bottom: 20px;
         }
         .logo img {
-            max-width: 100px; /* 로고 크기 조정 */
-            height: auto;
+            width: 128px; /* 로고의 원본 크기 유지 */
+            height: 128px;
+            max-width: 90%; /* 작은 화면에서 크기 조정 */
             display: inline-block;
+            object-fit: contain; /* 이미지 비율 유지 */
         }
         .section {
             padding: 30px 0;
@@ -125,7 +127,7 @@
     <div class="container">
         <header>
             <div class="logo">
-                <img src="/icons/icon128.png" alt="Lunar2GoogleCalender Logo">
+                <img src="./icons/icon128.png" alt="Lunar2GoogleCalender 로고 - 음력 생일 캘린더 아이콘">
             </div>
             <h1>음력 생일을 구글 캘린더에 추가하기</h1>
             <p>Lunar2GoogleCalender: 음력 생일을 Google 캘린더에 간편하게 추가하세요!</p>
