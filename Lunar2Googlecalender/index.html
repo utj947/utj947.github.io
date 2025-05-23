@@ -5,36 +5,133 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>음력 생일을 구글 캘린더에 추가하기 - Lunar2GoogleCalender</title>
     <style>
-        /* ... 기존 스타일 ... */
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            line-height: 1.6; 
+            margin: 0; 
+            padding: 0; 
+            background-color: #f4f7f6; 
+            color: #333; 
+        }
+        .container {
+            max-width: 960px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
         header {
             text-align: center;
             padding-bottom: 20px;
             border-bottom: 1px solid #eee;
         }
-        .app-logo { /* 로고를 위한 새로운 스타일 추가 */
-            width: 120px; /* 로고 크기 조절 */
-            height: 120px;
-            margin-bottom: 15px; /* 제목과의 간격 */
+        header h1 {
+            color: #4CAF50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
         }
-        /* ... 나머지 스타일 ... */
+        header p {
+            font-size: 1.1em;
+            color: #666;
+        }
+        .app-logo {
+            width: 128px; /* 로고 크기 128x128px 유지 */
+            height: 128px;
+            margin-bottom: 15px;
+            object-fit: contain; /* 이미지 비율 유지 */
+        }
+        .section {
+            padding: 30px 0;
+            border-bottom: 1px dashed #eee;
+        }
+        .section:last-of-type {
+            border-bottom: none;
+        }
+        h2 {
+            color: #4CAF50;
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 1.8em;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            background: #e9f5e9;
+            margin-bottom: 10px;
+            padding: 15px;
+            border-left: 5px solid #4CAF50;
+            border-radius: 4px;
+        }
+        .button-group {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .button {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .contact {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.95em;
+            color: #555;
+        }
+        .contact a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+            border-top: 1px solid #eee;
+            font-size: 0.85em;
+            color: #777;
+        }
+        footer a {
+            color: #007bff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .screenshot {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .screenshot img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <img src="/icons/icon128.png" alt="Lunar2GoogleCalender 로고" class="app-logo">
+            <img src="/icons/icon128.png" alt="Lunar2GoogleCalender 로고 - 음력 생일 캘린더 아이콘" class="app-logo">
             <h1>음력 생일을 구글 캘린더에 추가하기</h1>
             <p>Lunar2GoogleCalender: 음력 생일을 Google 캘린더에 간편하게 추가하고 매년 자동 업데이트 받으세요!</p>
         </header>
-        </div>
-</body>
-</html>
+
         <div class="section">
             <h2>✨ 주요 기능</h2>
             <ul>
-                <li>음력 날짜를 양력으로 **정확하게 자동 변환**하여 Google 캘린더에 추가합니다.</li>
-                <li>올해부터 **최대 50년**까지 자동으로 반복되는 생일 이벤트를 생성합니다.</li>
-                <li>사용자 본인의 **Google 캘린더와 직접 연동**되어 안전하고 편리하게 생일을 관리할 수 있습니다.</li>
+                <li>음력 날짜를 양력으로 <strong>정확하게 자동 변환</strong>하여 Google 캘린더에 추가합니다.</li>
+                <li>올해부터 <strong>최대 50년</strong>까지 자동으로 반복되는 생일 이벤트를 생성합니다.</li>
+                <li>사용자 본인의 <strong>Google 캘린더와 직접 연동</strong>되어 안전하고 편리하게 생일을 관리할 수 있습니다.</li>
                 <li>복잡한 음력-양력 변환 없이 간편하게 소중한 사람들의 생일을 놓치지 않을 수 있습니다.</li>
             </ul>
         </div>
@@ -50,6 +147,8 @@
                 <li>입력된 음력 생일이 각 년도의 양력 날짜로 변환되어 당신의 Google 캘린더에 자동으로 추가됩니다.</li>
             </ol>
             <div class="screenshot">
+                <!-- 스크린샷 이미지가 있으면 여기에 추가 -->
+                <!-- 예: <img src="./images/screenshot.png" alt="확장 프로그램 사용 예시"> -->
             </div>
         </div>
 
@@ -64,7 +163,7 @@
         <footer>
             <p>© 2025 utj99. All rights reserved.</p>
             <a href="https://utj947.github.io/L2Gprivacy/" target="_blank">개인 정보 보호 정책</a>
-            <a href="https://github.com/utj947/utj947.github.io/tree/main/Lunar2Googlecalender" target="_blank">github</a>
+            <a href="https://github.com/utj947/utj947.github.io/tree/main/Lunar2Googlecalender" target="_blank">GitHub</a>
         </footer>
     </div>
 </body>
