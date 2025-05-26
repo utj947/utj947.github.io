@@ -28,21 +28,20 @@
             border-radius: 12px;
             text-align: center;
             max-width: 90%;
-            width: 360px;
+            width: 500px;
         }
         .modal img {
-            width: 300px;
-            height: 300px;
+            width: 450px;
+            height: 450px;
             border-radius: 8px;
             margin: 0 auto;
         }
     </style>
 </head>
 <body class="bg-blue-300 min-h-screen flex flex-col items-center justify-center p-4">
-    <div class="bg-white rounded-2xl shadow-xl max-w-lg w-full p-10 text-center">
+    <div class="bg-white rounded-2xl shadow-xl max-w-2xl w-full p-10 text-center">
         <h1 class="text-3xl font-bold text-gray-800 mb-4">안녕하세요 대학생 개발자 엄태주입니다 😄</h1>
         <p class="text-gray-600 mb-6 text-lg">방문해 주셔서 감사합니다.<br>작은 커피 한 잔이 저에게 큰 힘이 됩니다.<br>따뜻한 마음으로 후원해 주시면 깊이 감사드리겠습니다.</p>
-        
         <!-- Donation Buttons -->
         <div class="space-y-4">
             <button onclick="showQR('kakao')" class="w-full bg-yellow-400 text-white font-semibold py-3 px-4 rounded-lg hover:bg-yellow-500 transition">
@@ -52,13 +51,11 @@
                 토스뱅크로 후원하기
             </button>
         </div>
-        
         <p class="text-gray-600 mt-6 mb-4 text-lg">여러분의 소중한 후원에 진심으로 감사드립니다.<br>덕분에 더 열심히 개발에 매진할 수 있습니다. 😊</p>
         <button id="copyMessage" class="bg-yellow-400 text-white font-semibold py-2 px-4 rounded-lg hover:bg-yellow-500 transition">
             오늘도 좋은 하루 보내세요 🤩
         </button>
     </div>
-
     <!-- QR Code Modal -->
     <div id="qrModal" class="modal">
         <div class="modal-content">
@@ -70,11 +67,9 @@
             </button>
         </div>
     </div>
-
     <footer class="mt-8 text-white text-sm">
         © 2025 엄태주. All rights reserved.
     </footer>
-
     <script>
         const copyButton = document.getElementById('copyMessage');
         copyButton.addEventListener('click', () => {
@@ -83,12 +78,10 @@
                 alert('감사 메시지가 복사되었습니다!');
             });
         });
-
         function showQR(type) {
             const modal = document.getElementById('qrModal');
             const modalTitle = document.getElementById('modalTitle');
             const modalQR = document.getElementById('modalQR');
-            
             if (type === 'kakao') {
                 modalTitle.textContent = '카카오뱅크 QR 코드';
                 modalQR.src = 'Kakaopay_QR.jpg';
@@ -96,10 +89,8 @@
                 modalTitle.textContent = '토스뱅크 QR 코드';
                 modalQR.src = 'toss_QR.jpg';
             }
-            
             modal.style.display = 'flex';
         }
-
         function closeQR() {
             const modal = document.getElementById('qrModal');
             modal.style.display = 'none';
