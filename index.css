@@ -375,18 +375,18 @@ footer {
     justify-content: center;
     align-items: center;
     text-align: center;
-    gap: 3rem;
-    padding-top: 4rem;
+    gap: 2rem;
+    padding-top: 2rem;
   }
-  .hero h1 { font-size: 3.5rem; }
+  .hero h1 { font-size: 2.75rem; }
   
   .profile-wrapper { 
     position: relative;
     right: auto;
     top: auto;
     transform: none;
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     margin: 0 auto;
     animation: fadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
   }
@@ -399,15 +399,35 @@ footer {
 }
 
 @media (max-width: 768px) {
-  .hero { padding-top: 2rem; gap: 2rem; }
-  .hero h1 { font-size: 2.5rem; }
-  .hero p { font-size: 1.125rem; }
-  .section-title { font-size: 2rem; }
+  .hero { padding-top: 1.5rem; gap: 1.5rem; min-height: auto; padding-bottom: 3rem; }
+  .hero h1 { font-size: 2rem; }
+  .hero p { font-size: 0.95rem; }
+  
+  section { padding: 3rem 0; }
+  .section-title { font-size: 1.75rem; margin-bottom: 2rem; }
   
   .profile-wrapper {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
   }
+
+  .glass-card { padding: 1.5rem; }
+  .vision-grid { gap: 1.5rem; }
+  .vision-text p { font-size: 0.95rem; margin-bottom: 1rem; }
+  .glass-card h3 { font-size: 1.25rem !important; }
+  .glass-card p { font-size: 0.85rem !important; }
+  .glass-card ul { font-size: 0.85rem !important; line-height: 1.6 !important; margin-left: 1rem !important; margin-bottom: 1rem !important; }
+
+  .research-card h3 { font-size: 1.25rem; }
+  .research-card p { font-size: 0.9rem; }
+  .tag { font-size: 0.75rem; padding: 0.2rem 0.5rem; }
+
+  .project-card h3 { font-size: 1.1rem; }
+  .project-card p { font-size: 0.85rem; }
+
+  .contact-section { padding: 4rem 0; }
+  .contact-section h2 { font-size: 2rem; margin-bottom: 1rem; }
+  .contact-section p { font-size: 1rem; margin-bottom: 2rem; }
 
   .cta-group {
     flex-direction: column;
@@ -416,5 +436,7 @@ footer {
 
   .btn {
     width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
   }
 }
