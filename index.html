@@ -8,6 +8,41 @@
     <link rel="stylesheet" href="index.css">
     <!-- FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        html[lang="ko"] .lang-en { display: none !important; }
+        html[lang="en"] .lang-ko { display: none !important; }
+        
+        .language-selector {
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .lang-btn {
+            background: transparent;
+            border: 1px solid var(--text-secondary);
+            color: var(--text-secondary);
+            padding: 0.5rem 1.2rem;
+            margin: 0 0.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        .lang-btn.active {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-color: white;
+        }
+        .lang-btn:hover:not(.active) {
+            border-color: rgba(255, 255, 255, 0.5);
+            color: rgba(255, 255, 255, 0.8);
+        }
+    </style>
 </head>
 <body>
     <div class="bg-gradient-glow"></div>
@@ -33,14 +68,14 @@
             <div class="hero-content">
                 <div class="badge">Master's Student</div>
                 <h1>Engineering the Future with <br><span class="gradient-text">AI & Robotics</span></h1>
-                <p>
+                <p class="lang-ko">
                     안녕하세요, <strong>엄태주 (Taejoo Um)</strong> 입니다.<br>
                     국립한국해양대학교 조선해양시스템공학전공 석사과정으로, 인공지능 기술과 계산공학을 융합하여 실제 산업 현장의 복잡한 문제를 해결합니다.
                 </p>
-                <div class="cta-group">
-                    <a href="#research" class="btn btn-primary">연구 실적 보기</a>
-                    <a href="#contact" class="btn btn-secondary">연락하기</a>
-                </div>
+                <p class="lang-en">
+                    Hello, I'm <strong>Taejoo Um</strong>.<br>
+                    I am a Master's student in Naval Architecture and Ocean Systems Engineering at Korea Maritime & Ocean University, solving complex industrial problems by integrating artificial intelligence and computational engineering.
+                </p>
             </div>
             <div class="profile-wrapper">
                 <img src="profile.jpg" alt="엄태주 프로필 사진">
@@ -52,28 +87,42 @@
             <div class="vision-grid">
                 <div class="vision-text">
                     <h2 class="section-title">Vision & Focus</h2>
-                    <p>
+                    <p class="lang-ko">
                         조선해양 산업은 거대한 규모의 구조물, 복잡한 생산 공정, 방대한 데이터가 얽혀있는 고도화된 엔지니어링 분야입니다. 
                     </p>
-                    <p>
+                    <p class="lang-en">
+                        The shipbuilding and offshore industry is an advanced engineering field intertwined with massive structures, complex production processes, and vast amounts of data.
+                    </p>
+                    <p class="lang-ko">
                         저는 단순한 이론적 접근을 넘어, <span class="highlight">현장의 데이터 구조와 사용 환경을 깊이 이해</span>하고 이를 해결할 수 있는 실용적인 인공지능/계산공학 기반 자동화 기술을 연구합니다.
                     </p>
-                    <p>
+                    <p class="lang-en">
+                        Beyond a simple theoretical approach, I deeply understand the <span class="highlight">data structure and usage environment of the field</span> and research practical AI/computational engineering-based automation technologies to solve these challenges.
+                    </p>
+                    <p class="lang-ko">
                         로봇 제어를 직관적으로 바꾸고, 방대한 CAD/CAE 데이터 처리 병목을 해소함으로써 조선해양 및 제조 산업의 <span class="highlight">디지털 전환(Digital Transformation)</span>에 기여하는 것이 저의 궁극적인 비전입니다.
+                    </p>
+                    <p class="lang-en">
+                        My ultimate vision is to contribute to the <span class="highlight">Digital Transformation</span> of the shipbuilding, offshore, and manufacturing industries by making robot control intuitive and resolving bottlenecks in processing vast CAD/CAE data.
                     </p>
                 </div>
                 
                 <div class="glass-card">
-                    <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem;">핵심 역량</h3>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem;">
+                        <span class="lang-ko">핵심 역량</span>
+                        <span class="lang-en">Core Competencies</span>
+                    </h3>
                     
                     <div style="margin-bottom: 1.5rem;">
                         <h4 style="color: var(--accent-1); margin-bottom: 0.5rem; font-size: 1.1rem;">AI & Robotics</h4>
-                        <p style="color: var(--text-secondary); font-size: 0.95rem;">LLM (LLaMA), Speech Recognition (Whisper), 협동 로봇 제어 로직 설계</p>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;" class="lang-ko">LLM (LLaMA), Speech Recognition (Whisper), 협동 로봇 제어 로직 설계</p>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;" class="lang-en">LLM (LLaMA), Speech Recognition (Whisper), Collaborative Robot Control Logic Design</p>
                     </div>
                     
                     <div style="margin-bottom: 1.5rem;">
                         <h4 style="color: var(--accent-2); margin-bottom: 0.5rem; font-size: 1.1rem;">CAD/CAE Processing</h4>
-                        <p style="color: var(--text-secondary); font-size: 0.95rem;">3D Reconstruction (NeuS), Ray Casting, Mesh Processing, CAD 형상 경량화</p>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;" class="lang-ko">3D Reconstruction (NeuS), Ray Casting, Mesh Processing, CAD 형상 경량화</p>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;" class="lang-en">3D Reconstruction (NeuS), Ray Casting, Mesh Processing, CAD Model Simplification</p>
                     </div>
                     
                     <div>
@@ -92,11 +141,21 @@
                 <!-- Research 1 -->
                 <div class="glass-card research-card">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap;">
-                        <h3>LLM 기반 협동 용접 로봇 음성 제어 시스템</h3>
-                        <div class="award-badge"><i class="fas fa-trophy"></i> 2025 한국CDE학회 우수포스터상</div>
+                        <h3>
+                            <span class="lang-ko">LLM 기반 협동 용접 로봇 음성 제어 시스템</span>
+                            <span class="lang-en">LLM-based Voice Control System for Collaborative Welding Robots</span>
+                        </h3>
+                        <div class="award-badge">
+                            <i class="fas fa-trophy"></i> 
+                            <span class="lang-ko">2025 한국CDE학회 우수포스터상</span>
+                            <span class="lang-en">2025 Society of CDE Outstanding Poster Award</span>
+                        </div>
                     </div>
-                    <p>
+                    <p class="lang-ko">
                         작업자의 음성 명령을 Whisper로 텍스트화하고 LLaMA를 통해 로봇 제어 명령(JSON)으로 파싱하여, 직관적이고 안전한 협동 용접 로봇 제어를 실현합니다.
+                    </p>
+                    <p class="lang-en">
+                        By transcribing the operator's voice commands using Whisper and parsing them into robot control commands (JSON) through LLaMA, we realize intuitive and safe control of collaborative welding robots.
                     </p>
                     <div class="tag-list">
                         <span class="tag">LLM</span>
@@ -106,22 +165,40 @@
                         <span class="tag">JSON Parsing</span>
                     </div>
                     <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-                        <a href="2025_cde_poster.pdf" target="_blank" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.5rem 1rem;"><i class="fas fa-file-pdf" style="margin-right: 0.5rem;"></i>포스터 보기</a>
-                        <a href="2025_cde_poster_award.pdf" target="_blank" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.5rem 1rem;"><i class="fas fa-award" style="margin-right: 0.5rem;"></i>우수포스터 상장 보기</a>
+                        <a href="2025_cde_poster.pdf" target="_blank" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.5rem 1rem;">
+                            <i class="fas fa-file-pdf" style="margin-right: 0.5rem;"></i>
+                            <span class="lang-ko">포스터 보기</span><span class="lang-en">View Poster</span>
+                        </a>
+                        <a href="2025_cde_poster_award.pdf" target="_blank" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.5rem 1rem;">
+                            <i class="fas fa-award" style="margin-right: 0.5rem;"></i>
+                            <span class="lang-ko">우수포스터 상장 보기</span><span class="lang-en">View Award Certificate</span>
+                        </a>
                     </div>
                 </div>
 
                 <!-- Research 2 -->
                 <div class="glass-card research-card">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap;">
-                        <h3>비수밀 CAD 모델의 외관 보존형 경량화 및 내부 형상 제거</h3>
-                        <div class="award-badge"><i class="fas fa-trophy"></i> 2026 한국CDE학회 우수논문상</div>
+                        <h3>
+                            <span class="lang-ko">비수밀 CAD 모델의 외관 보존형 경량화 및 내부 형상 제거</span>
+                            <span class="lang-en">Appearance-Preserving Simplification and Internal Feature Removal of Non-Watertight CAD Models</span>
+                        </h3>
+                        <div class="award-badge">
+                            <i class="fas fa-trophy"></i> 
+                            <span class="lang-ko">2026 한국CDE학회 우수논문상</span>
+                            <span class="lang-en">2026 Society of CDE Outstanding Paper Award</span>
+                        </div>
                     </div>
                     <p style="margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--accent-1);">
-                        <i class="fas fa-book"></i> SCIE급 국제학술지 Journal of Computational Design and Engineering (JCR Q1) 투고 (Revision 단계)
+                        <i class="fas fa-book"></i> 
+                        <span class="lang-ko">SCIE급 국제학술지 Journal of Computational Design and Engineering (JCR Q1) 투고 (Revision 단계)</span>
+                        <span class="lang-en">Submitted to SCIE International Journal: Journal of Computational Design and Engineering (JCR Q1) (Under Revision)</span>
                     </p>
-                    <p>
+                    <p class="lang-ko">
                         대규모 조립체의 비수밀 구조(미세한 틈 등)에 의한 레이캐스팅 누수 문제를 해결하는 NeuS 가이드 하이브리드 레이캐스팅(NGSE) 기법을 개발하여, 기하학적 정밀도 유지 및 내부 형상만 식별하여 제거합니다.
+                    </p>
+                    <p class="lang-en">
+                        Developed NeuS-Guided Hybrid Ray Casting (NGSE) technique to solve ray-casting leakage problems caused by non-watertight structures (e.g., narrow gaps) in large assemblies, maintaining geometric precision while identifying and removing only internal features.
                     </p>
                     <div class="tag-list">
                         <span class="tag">CAD/CAE</span>
@@ -131,8 +208,14 @@
                         <span class="tag">Digital Twin</span>
                     </div>
                     <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-                        <a href="2026_cde_paper_award.pdf" target="_blank" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.5rem 1rem;"><i class="fas fa-award" style="margin-right: 0.5rem;"></i>우수논문 상장 보기</a>
-                        <a href="https://webzine.cde.or.kr/webzine/sub.html?md_no=248" target="_blank" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.5rem 1rem;"><i class="fas fa-newspaper" style="margin-right: 0.5rem;"></i>웹진 인터뷰 기사 보기</a>
+                        <a href="2026_cde_paper_award.pdf" target="_blank" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.5rem 1rem;">
+                            <i class="fas fa-award" style="margin-right: 0.5rem;"></i>
+                            <span class="lang-ko">우수논문 상장 보기</span><span class="lang-en">View Award Certificate</span>
+                        </a>
+                        <a href="https://webzine.cde.or.kr/webzine/sub.html?md_no=248" target="_blank" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.5rem 1rem;">
+                            <i class="fas fa-newspaper" style="margin-right: 0.5rem;"></i>
+                            <span class="lang-ko">웹진 인터뷰 기사 보기</span><span class="lang-en">View Webzine Interview</span>
+                        </a>
                     </div>
                 </div>
 
@@ -146,26 +229,39 @@
                 
                 <div class="glass-card project-card">
                     <h3><i class="fas fa-cube" style="margin-right: 0.5rem;"></i> split3mf</h3>
-                    <p style="margin-bottom: 0.75rem;">웹 브라우저 상에서 3D 모델(3MF) 데이터를 파싱하고 분할/제어할 수 있는 플랫폼입니다.</p>
+                    <p style="margin-bottom: 0.75rem;" class="lang-ko">웹 브라우저 상에서 3D 모델(3MF) 데이터를 파싱하고 분할/제어할 수 있는 플랫폼입니다.</p>
+                    <p style="margin-bottom: 0.75rem;" class="lang-en">A platform that can parse, split, and control 3D model (3MF) data on the web browser.</p>
                     <p style="font-size: 0.85rem; margin-bottom: 1.5rem;">
-                        <i class="fab fa-reddit" style="color: #ff4500;"></i> <a href="https://www.reddit.com/r/BambuLab/comments/1u0bobr/browserbased_tool_for_splitting_painted_3mf/" target="_blank" style="color: #60a5fa; text-decoration: underline;">관련 Reddit 게시글에서 더 많은 정보 보기</a>
+                        <i class="fab fa-reddit" style="color: #ff4500;"></i> 
+                        <a href="https://www.reddit.com/r/BambuLab/comments/1u0bobr/browserbased_tool_for_splitting_painted_3mf/" target="_blank" style="color: #60a5fa; text-decoration: underline;">
+                            <span class="lang-ko">관련 Reddit 게시글에서 더 많은 정보 보기</span>
+                            <span class="lang-en">See more information in the related Reddit post</span>
+                        </a>
                     </p>
                     <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                        <a href="https://split3mf.com" target="_blank" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.4rem 0.8rem; width: auto;"><i class="fas fa-external-link-alt" style="margin-right: 0.5rem;"></i>웹사이트 방문</a>
+                        <a href="https://split3mf.com" target="_blank" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.4rem 0.8rem; width: auto;">
+                            <i class="fas fa-external-link-alt" style="margin-right: 0.5rem;"></i>
+                            <span class="lang-ko">웹사이트 방문</span><span class="lang-en">Visit Website</span>
+                        </a>
                     </div>
                 </div>
 
                 <div class="glass-card project-card">
                     <h3><i class="fas fa-gamepad" style="margin-right: 0.5rem;"></i> 2playervs</h3>
-                    <p style="margin-bottom: 1.5rem;">별도 설치 없이 즐길 수 있는 웹 기반 실시간 2인용 인터랙티브 대전 게임 서비스입니다.</p>
+                    <p style="margin-bottom: 1.5rem;" class="lang-ko">별도 설치 없이 즐길 수 있는 웹 기반 실시간 2인용 인터랙티브 대전 게임 서비스입니다.</p>
+                    <p style="margin-bottom: 1.5rem;" class="lang-en">A web-based real-time 2-player interactive combat game service that you can enjoy without installation.</p>
                     <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                        <a href="https://2playervs.com" target="_blank" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.4rem 0.8rem; width: auto;"><i class="fas fa-external-link-alt" style="margin-right: 0.5rem;"></i>웹사이트 방문</a>
+                        <a href="https://2playervs.com" target="_blank" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.4rem 0.8rem; width: auto;">
+                            <i class="fas fa-external-link-alt" style="margin-right: 0.5rem;"></i>
+                            <span class="lang-ko">웹사이트 방문</span><span class="lang-en">Visit Website</span>
+                        </a>
                     </div>
                 </div>
 
                 <div class="glass-card project-card">
                     <h3><i class="fas fa-car-crash" style="margin-right: 0.5rem;"></i> crashviewer</h3>
-                    <p style="margin-bottom: 1.5rem;">복잡한 충돌 시뮬레이션 결과와 구조 변형 데이터를 분석하고 직관적으로 렌더링하는 3D 시각화 전용 뷰어입니다.</p>
+                    <p style="margin-bottom: 1.5rem;" class="lang-ko">복잡한 충돌 시뮬레이션 결과와 구조 변형 데이터를 분석하고 직관적으로 렌더링하는 3D 시각화 전용 뷰어입니다.</p>
+                    <p style="margin-bottom: 1.5rem;" class="lang-en">A dedicated 3D visualization viewer that analyzes and intuitively renders complex crash simulation results and structural deformation data.</p>
                     <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
                         <span class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.4rem 0.8rem; width: auto; opacity: 0.6; cursor: not-allowed;"><i class="fas fa-lock" style="margin-right: 0.5rem;"></i>Private Repository</span>
                     </div>
@@ -173,18 +269,29 @@
 
                 <div class="glass-card project-card">
                     <h3 style="display: flex; align-items: center;"><img src="https://textfight.io/favicon.ico" alt="TextFight Logo" style="width: 1.5rem; height: 1.5rem; margin-right: 0.5rem; border-radius: 4px;"> TextFight</h3>
-                    <p style="margin-bottom: 1.5rem;">실시간 로직 처리와 타이핑 인터페이스를 결합한 텍스트 기반의 인터랙티브 대전 게임입니다.</p>
+                    <p style="margin-bottom: 1.5rem;" class="lang-ko">실시간 로직 처리와 타이핑 인터페이스를 결합한 텍스트 기반의 인터랙티브 대전 게임입니다.</p>
+                    <p style="margin-bottom: 1.5rem;" class="lang-en">A text-based interactive combat game that combines real-time logic processing and a typing interface.</p>
                     <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                        <a href="https://textfight.io" target="_blank" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.4rem 0.8rem; width: auto;"><i class="fas fa-external-link-alt" style="margin-right: 0.5rem;"></i>웹사이트 방문</a>
+                        <a href="https://textfight.io" target="_blank" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.4rem 0.8rem; width: auto;">
+                            <i class="fas fa-external-link-alt" style="margin-right: 0.5rem;"></i>
+                            <span class="lang-ko">웹사이트 방문</span><span class="lang-en">Visit Website</span>
+                        </a>
                     </div>
                 </div>
 
                 <div class="glass-card project-card">
                     <h3><i class="fas fa-calendar-alt" style="margin-right: 0.5rem;"></i> LunarGoogleCalendar</h3>
-                    <p style="margin-bottom: 1.5rem;">음력 생일 및 기념일을 구글 캘린더에 간편하게 추가하고 동기화할 수 있는 크롬 확장 프로그램입니다.</p>
+                    <p style="margin-bottom: 1.5rem;" class="lang-ko">음력 생일 및 기념일을 구글 캘린더에 간편하게 추가하고 동기화할 수 있는 크롬 확장 프로그램입니다.</p>
+                    <p style="margin-bottom: 1.5rem;" class="lang-en">A Chrome extension that allows you to easily add and synchronize lunar birthdays and anniversaries to Google Calendar.</p>
                     <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                        <a href="https://chromewebstore.google.com/detail/%EC%9D%8C%EB%A0%A5-%EC%83%9D%EC%9D%BC-%EA%B5%AC%EA%B8%80%EC%BA%98%EB%A6%B0%EB%8D%94-%EC%B6%94%EA%B0%80%EA%B8%B0/mgogeiiklhbnfgbpmpbebaidhgngikhj?hl=ko&utm_source=ext_sidebar" target="_blank" class="btn btn-primary" style="font-size: 0.85rem; padding: 0.4rem 0.8rem; width: auto;"><i class="fab fa-chrome" style="margin-right: 0.5rem;"></i>Chrome 확장 앱</a>
-                        <a href="https://github.com/utj947/lunargooglecalendar" target="_blank" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.4rem 0.8rem; width: auto;"><i class="fab fa-github" style="margin-right: 0.5rem;"></i>GitHub 레포지토리</a>
+                        <a href="https://chromewebstore.google.com/detail/%EC%9D%8C%EB%A0%A5-%EC%83%9D%EC%9D%BC-%EA%B5%AC%EA%B8%80%EC%BA%98%EB%A6%B0%EB%8D%94-%EC%B6%94%EA%B0%80%EA%B8%B0/mgogeiiklhbnfgbpmpbebaidhgngikhj?hl=ko&utm_source=ext_sidebar" target="_blank" class="btn btn-primary" style="font-size: 0.85rem; padding: 0.4rem 0.8rem; width: auto;">
+                            <i class="fab fa-chrome" style="margin-right: 0.5rem;"></i>
+                            <span class="lang-ko">Chrome 확장 앱</span><span class="lang-en">Chrome Extension</span>
+                        </a>
+                        <a href="https://github.com/utj947/lunargooglecalendar" target="_blank" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.4rem 0.8rem; width: auto;">
+                            <i class="fab fa-github" style="margin-right: 0.5rem;"></i>
+                            <span class="lang-ko">GitHub 레포지토리</span><span class="lang-en">GitHub Repository</span>
+                        </a>
                     </div>
                 </div>
 
@@ -197,9 +304,13 @@
             <div class="projects-grid">
                 <div class="glass-card project-card">
                     <h3><i class="fas fa-cube" style="margin-right: 0.5rem;"></i> MakerWorld 3D Models</h3>
-                    <p style="margin-bottom: 1.5rem;">개인적으로 디자인한 3D 모델링 창작물을 공유하는 공간입니다.</p>
+                    <p style="margin-bottom: 1.5rem;" class="lang-ko">개인적으로 디자인한 3D 모델링 창작물을 공유하는 공간입니다.</p>
+                    <p style="margin-bottom: 1.5rem;" class="lang-en">A space to share my personally designed 3D modeling creations.</p>
                     <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                        <a href="https://makerworld.com/ko/@TaeJoo" target="_blank" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.4rem 0.8rem; width: auto;"><i class="fas fa-external-link-alt" style="margin-right: 0.5rem;"></i>MakerWorld 방문</a>
+                        <a href="https://makerworld.com/ko/@TaeJoo" target="_blank" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.4rem 0.8rem; width: auto;">
+                            <i class="fas fa-external-link-alt" style="margin-right: 0.5rem;"></i>
+                            <span class="lang-ko">MakerWorld 방문</span><span class="lang-en">Visit MakerWorld</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -208,7 +319,8 @@
         <!-- Contact Section -->
         <section id="contact" class="container contact-section">
             <h2>Let's build the future together</h2>
-            <p>협업 문의, 연구 내용 관련 질문, 또는 프로젝트에 대한 아이디어가 있으시다면 언제든 연락주세요.</p>
+            <p class="lang-ko">협업 문의, 연구 내용 관련 질문, 또는 프로젝트에 대한 아이디어가 있으시다면 언제든 연락주세요.</p>
+            <p class="lang-en">If you have collaboration inquiries, questions about my research, or ideas for a project, please feel free to contact me at any time.</p>
             <a href="mailto:taejooum@gmail.com" class="btn btn-primary" style="font-size: 1.125rem; padding: 1rem 2.5rem;">
                 <i class="fas fa-envelope" style="margin-right: 0.75rem;"></i> taejooum@gmail.com
             </a>
@@ -218,6 +330,12 @@
                 </a>
             </div>
         </section>
+
+        <!-- Language Selector -->
+        <div class="language-selector container" style="margin-bottom: 4rem;">
+            <button class="lang-btn active" onclick="setLanguage('ko')" id="btn-ko">한국어</button>
+            <button class="lang-btn" onclick="setLanguage('en')" id="btn-en">English</button>
+        </div>
     </main>
 
     <footer>
@@ -228,5 +346,33 @@
             </p>
         </div>
     </footer>
+
+    <script>
+        function setLanguage(lang) {
+            document.documentElement.lang = lang;
+            if (lang === 'ko') {
+                document.getElementById('btn-ko').classList.add('active');
+                document.getElementById('btn-en').classList.remove('active');
+            } else {
+                document.getElementById('btn-en').classList.add('active');
+                document.getElementById('btn-ko').classList.remove('active');
+            }
+            
+            // Save preference to localStorage
+            try {
+                localStorage.setItem('preferredLanguage', lang);
+            } catch(e) {}
+        }
+        
+        // Load preference on start
+        window.addEventListener('DOMContentLoaded', () => {
+            try {
+                const savedLang = localStorage.getItem('preferredLanguage');
+                if (savedLang === 'en') {
+                    setLanguage('en');
+                }
+            } catch(e) {}
+        });
+    </script>
 </body>
 </html>
