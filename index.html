@@ -365,12 +365,23 @@
         
         // Load preference on start
         window.addEventListener('DOMContentLoaded', () => {
+            let targetLang = 'en'; // Default to English
+            
+            // Check browser language first
+            const browserLang = navigator.language || navigator.userLanguage || '';
+            if (browserLang.toLowerCase().startsWith('ko')) {
+                targetLang = 'ko';
+            }
+            
+            // Override with user preference if it exists
             try {
                 const savedLang = localStorage.getItem('preferredLanguage');
-                if (savedLang === 'en') {
-                    setLanguage('en');
+                if (savedLang === 'ko' || savedLang === 'en') {
+                    targetLang = savedLang;
                 }
             } catch(e) {}
+            
+            setLanguage(targetLang);
         });
     </script>
 </body>
