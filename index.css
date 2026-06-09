@@ -334,6 +334,20 @@ section {
   font-size: 0.95rem;
 }
 
+.project-card, .research-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.project-card > div:last-child, .research-card > div:last-child {
+  margin-top: auto;
+}
+
+.project-card .btn, .research-card .btn {
+  height: 2.5rem;
+}
+
 /* Contact */
 .contact-section {
   text-align: center;
