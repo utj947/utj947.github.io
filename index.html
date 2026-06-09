@@ -47,7 +47,6 @@
     <header>
         <div class="container nav-container">
             <div class="logo" style="display: flex; align-items: center;">
-                <img src="logo.png" alt="Taejoo Um Logo" style="height: 2.5rem; width: 2.5rem; border-radius: 50%; object-fit: cover; margin-right: 0.75rem; border: 2px solid var(--accent-1);"> 
                 <span>Taejoo Um.</span>
             </div>
             <nav>
@@ -372,6 +371,7 @@
                 <button class="footer-lang-btn active" onclick="setLanguage('ko')" id="btn-ko">한국어</button>
                 <button class="footer-lang-btn" onclick="setLanguage('en')" id="btn-en">English</button>
             </div>
+            <p id="last-updated" style="font-size: 0.8rem; color: var(--text-secondary); text-align: center; margin-top: 1rem;"></p>
         </div>
     </footer>
 
@@ -411,6 +411,18 @@
             } catch(e) {}
             
             setLanguage(targetLang);
+            
+            // Fetch last update time from GitHub API
+            fetch('https://api.github.com/repos/utj947/utj947.github.io/commits/main')
+                .then(response => response.json())
+                .then(data => {
+                    if (data && data.commit && data.commit.committer && data.commit.committer.date) {
+                        const date = new Date(data.commit.committer.date);
+                        const dateString = date.toLocaleDateString('ko-KR', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' });
+                        document.getElementById('last-updated').innerHTML = `<span class="lang-ko">마지막 업데이트 : ${dateString}</span><span class="lang-en">Last updated: ${dateString}</span>`;
+                    }
+                })
+                .catch(err => console.error('Failed to fetch last update time:', err));
         });
     </script>
 </body>
