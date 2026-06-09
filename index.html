@@ -47,7 +47,7 @@
     <header>
         <div class="container nav-container">
             <div class="logo" style="display: flex; align-items: center;">
-                <span>Taejoo Um.</span>
+                <span>Taejoo Um</span>
             </div>
             <nav>
                 <a href="https://github.com/utj947" target="_blank" class="btn btn-secondary" style="padding: 0.5rem 1rem;">
@@ -64,12 +64,12 @@
                 <div class="badge">Master's Student</div>
                 <h1>Engineering the Future with <br><span class="gradient-text">AI & Robotics</span></h1>
                 <p class="lang-ko">
-                    안녕하세요, <strong>엄태주 (Taejoo Um)</strong> 입니다.<br>
-                    국립한국해양대학교 조선해양시스템공학전공 석사과정으로, 인공지능 기술과 계산공학을 융합하여 실제 산업 현장의 복잡한 문제를 해결합니다.
+                    안녕하세요, <strong>엄태주</strong>입니다.<br>
+                    국립한국해양대학교 조선해양시스템공학전공 석사과정으로, 조선공학, 로봇공학, 인공지능 기술들을 활용해서 실제 산업 현장의 복잡한 문제를 해결합니다. 여러 사이드 프로젝트를 진행중입니다.
                 </p>
                 <p class="lang-en">
                     Hello, I'm <strong>Taejoo Um</strong>.<br>
-                    I am a Master's student in Naval Architecture and Ocean Systems Engineering at Korea Maritime & Ocean University, solving complex industrial problems by integrating artificial intelligence and computational engineering.
+                    I am a Master's student in Naval Architecture and Ocean Systems Engineering at Korea Maritime & Ocean University, solving complex industrial problems utilizing naval architecture, robotics, and artificial intelligence technologies. I am also working on various side projects.
                 </p>
             </div>
             <div class="profile-wrapper">
@@ -221,8 +221,7 @@
                             <span class="lang-ko">Cosmos Policy 기반 로봇 제어 및 Sim2Real 구현</span>
                             <span class="lang-en">Cosmos Policy-based Robot Control and Sim2Real Implementation</span>
                         </h3>
-                        <div class="award-badge" style="background: rgba(96, 165, 250, 0.1); color: #60a5fa; border: 1px solid rgba(96, 165, 250, 0.2);">
-                            <i class="fas fa-spinner fa-spin"></i> 
+                        <div class="award-badge" style="background: transparent; color: #10b981; border: 1px solid #10b981;">
                             <span class="lang-ko">진행 중인 연구</span>
                             <span class="lang-en">Ongoing Research</span>
                         </div>
@@ -276,8 +275,8 @@
 
                 <div class="glass-card project-card">
                     <h3><i class="fas fa-gamepad" style="margin-right: 0.5rem;"></i> 2playervs</h3>
-                    <p style="margin-bottom: 1.5rem;" class="lang-ko">별도 설치 없이 즐길 수 있는 웹 기반 실시간 2인용 인터랙티브 대전 게임 서비스입니다.</p>
-                    <p style="margin-bottom: 1.5rem;" class="lang-en">A web-based real-time 2-player interactive combat game service that you can enjoy without installation.</p>
+                    <p style="margin-bottom: 1.5rem;" class="lang-ko">별도 설치 없이 즐길 수 있는 웹 기반 스마트폰 로컬 2인용 인터랙티브 대전 게임입니다.</p>
+                    <p style="margin-bottom: 1.5rem;" class="lang-en">A web-based smartphone local 2-player interactive combat game that you can enjoy without installation.</p>
                     <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
                         <a href="https://2playervs.com" target="_blank" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.4rem 0.8rem; width: auto;">
                             <i class="fas fa-external-link-alt" style="margin-right: 0.5rem;"></i>
@@ -297,8 +296,8 @@
 
                 <div class="glass-card project-card">
                     <h3 style="display: flex; align-items: center;"><img src="https://textfight.io/favicon.ico" alt="TextFight Logo" style="width: 1.5rem; height: 1.5rem; margin-right: 0.5rem; border-radius: 4px;"> TextFight</h3>
-                    <p style="margin-bottom: 1.5rem;" class="lang-ko">실시간 로직 처리와 타이핑 인터페이스를 결합한 텍스트 기반의 인터랙티브 대전 게임입니다.</p>
-                    <p style="margin-bottom: 1.5rem;" class="lang-en">A text-based interactive combat game that combines real-time logic processing and a typing interface.</p>
+                    <p style="margin-bottom: 1.5rem;" class="lang-ko">100글자 이내로 자신의 캐릭터를 적고, 상대가 적은 캐릭터와 텍스트 기반의 인터랙티브 대전 게임입니다.</p>
+                    <p style="margin-bottom: 1.5rem;" class="lang-en">A text-based interactive combat game where you write your character in under 100 characters and fight against the opponent's character.</p>
                     <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
                         <a href="https://textfight.io" target="_blank" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.4rem 0.8rem; width: auto;">
                             <i class="fas fa-external-link-alt" style="margin-right: 0.5rem;"></i>
@@ -371,7 +370,10 @@
                 <button class="footer-lang-btn active" onclick="setLanguage('ko')" id="btn-ko">한국어</button>
                 <button class="footer-lang-btn" onclick="setLanguage('en')" id="btn-en">English</button>
             </div>
-            <p id="last-updated" style="font-size: 0.8rem; color: var(--text-secondary); text-align: center; margin-top: 1rem;"></p>
+            <p id="last-updated" style="font-size: 0.8rem; color: var(--text-secondary); text-align: center; margin-top: 1rem;">
+                <span class="lang-ko">마지막 업데이트 정보 불러오는 중...</span>
+                <span class="lang-en">Loading last update info...</span>
+            </p>
         </div>
     </footer>
 
@@ -422,7 +424,10 @@
                         document.getElementById('last-updated').innerHTML = `<span class="lang-ko">마지막 업데이트 : ${dateString}</span><span class="lang-en">Last updated: ${dateString}</span>`;
                     }
                 })
-                .catch(err => console.error('Failed to fetch last update time:', err));
+                .catch(err => {
+                    console.error('Failed to fetch last update time:', err);
+                    document.getElementById('last-updated').innerHTML = `<span class="lang-ko">마지막 업데이트 : 정보를 불러올 수 없습니다.</span><span class="lang-en">Last updated: Unable to load</span>`;
+                });
         });
     </script>
 </body>
