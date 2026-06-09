@@ -375,9 +375,12 @@ footer {
     flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    text-align: left;
     gap: 2rem;
     padding-top: 2rem;
+  }
+  .hero-content {
+    align-items: flex-start;
   }
   .hero h1 { font-size: 2.75rem; }
   
