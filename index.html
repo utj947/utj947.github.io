@@ -47,32 +47,13 @@
             </div>
         </section>
 
-        <!-- Vision / About -->
+        <!-- About Section -->
         <section id="about" class="container">
-            <h2 class="section-title">Vision & Focus</h2>
-            <div class="vision-grid">
-                <div class="vision-text">
-                    <p>조선해양 산업은 거대한 규모의 구조물, 복잡한 생산 공정, 방대한 데이터가 얽혀있는 고도화된 엔지니어링 분야입니다.</p>
-                    <p>저는 단순한 이론적 접근을 넘어, <span class="highlight">현장의 데이터 구조와 사용 환경을 깊이 이해</span>하고 이를 해결할 수 있는 실용적인 인공지능/계산공학 기반 자동화 기술을 연구합니다.</p>
-                    <p>로봇 제어를 직관적으로 바꾸고, 방대한 CAD/CAE 데이터 처리 병목을 해소함으로써 조선해양 및 제조 산업의 <strong>디지털 전환(Digital Transformation)</strong>에 기여하는 것이 저의 궁극적인 비전입니다.</p>
-                </div>
-                <div class="glass-card">
-                    <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem; color: var(--text-primary);">핵심 역량</h3>
-                    <div style="display: flex; flex-direction: column; gap: 1rem;">
-                        <div>
-                            <strong style="color: var(--accent-1);">AI & Robotics</strong>
-                            <p style="color: var(--text-secondary); font-size: 0.95rem;">LLM (LLaMA), Speech Recognition (Whisper), 협동 로봇 제어 로직 설계</p>
-                        </div>
-                        <div>
-                            <strong style="color: var(--accent-2);">CAD/CAE Processing</strong>
-                            <p style="color: var(--text-secondary); font-size: 0.95rem;">3D Reconstruction (NeuS), Ray Casting, Mesh Processing, CAD 형상 경량화</p>
-                        </div>
-                        <div>
-                            <strong style="color: #10b981;">Programming & Tools</strong>
-                            <p style="color: var(--text-secondary); font-size: 0.95rem;">Python, C++, JavaScript, React, TensorFlow, OpenCV, Git, Docker</p>
-                        </div>
-                    </div>
-                </div>
+            <h2 class="section-title">About</h2>
+            <div class="glass-card">
+                <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-secondary);">
+                    한국해양대학교 조선해양시스템공학부 석사과정에 재학 중이며, 해양/선박 도메인 지식과 인공지능(AI), 로보틱스, 3D 그래픽스 기술을 융합하는 연구를 수행합니다. 주로 LLM 기반 로봇 제어 시스템과 대규모 CAD 모델의 3D Reconstruction 및 경량화 연구에 집중하여, 산업 현장의 복잡한 문제들을 실용적으로 해결하는 솔루션을 개발합니다.
+                </p>
             </div>
         </section>
 
@@ -88,13 +69,8 @@
                         <div class="award-badge"><i class="fas fa-trophy"></i> 2025 한국CDE학회 우수포스터상</div>
                     </div>
                     <p>
-                        복잡하고 위험한 용접 현장에서 티칭 펜던트 조작의 한계를 극복하기 위해, 자연어 음성 명령을 로봇이 이해할 수 있는 JSON 형태의 정형화된 제어 파라미터(시작점, 종료점, 속도, 주파수 등)로 변환하는 시스템을 구축했습니다.
+                        작업자의 음성 명령을 Whisper로 텍스트화하고 LLaMA를 통해 로봇 제어 명령(JSON)으로 파싱하여, 직관적이고 안전한 협동 용접 로봇 제어를 실현합니다.
                     </p>
-                    <ul style="color: var(--text-secondary); margin-left: 1.5rem; margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.8;">
-                        <li>Whisper-small 음성 인식 및 LLaMA 3.2 3B 모델 Fine-tuning 수행</li>
-                        <li>명령 분류 정확도 95%, 텍스트-JSON 변환 정확도 100% 달성</li>
-                        <li>핸즈프리(Hands-free) 로봇 제어 환경 기반 마련</li>
-                    </ul>
                     <div class="tag-list">
                         <span class="tag">LLM</span>
                         <span class="tag">Robotics</span>
@@ -118,13 +94,8 @@
                         <i class="fas fa-book"></i> SCIE급 국제학술지 Journal of Computational Design and Engineering (JCR Q1) 투고 (Revision 단계)
                     </p>
                     <p>
-                        대규모 조립체의 비수밀 구조(미세한 틈, 균열 등)로 인해 발생하는 레이캐스팅 누수 문제를 해결하기 위해 NeuS 가이드 하이브리드 레이캐스팅(NGSE) 기법을 제안했습니다. 기하학적 정밀도를 잃지 않으면서도 내부 형상만 완벽히 식별하여 제거합니다.
+                        대규모 조립체의 비수밀 구조(미세한 틈 등)에 의한 레이캐스팅 누수 문제를 해결하는 NeuS 가이드 하이브리드 레이캐스팅(NGSE) 기법을 개발하여, 기하학적 정밀도 유지 및 내부 형상만 식별하여 제거합니다.
                     </p>
-                    <ul style="color: var(--text-secondary); margin-left: 1.5rem; margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.8;">
-                        <li>원본 메시 페이스를 유지하며 NeuS를 위상적 내부/외부 판별 가이드로만 활용</li>
-                        <li>대형 선박 모델에서 내부 제거율 93.80%, 외부 보존율 98.50% 달성</li>
-                        <li>디지털 트윈 및 CFD/FEA 해석 전처리 과정의 막대한 비용 절감</li>
-                    </ul>
                     <div class="tag-list">
                         <span class="tag">CAD/CAE</span>
                         <span class="tag">3D Reconstruction</span>
@@ -148,7 +119,7 @@
                 
                 <div class="glass-card project-card">
                     <h3><i class="fas fa-cube" style="margin-right: 0.5rem;"></i> split3mf</h3>
-                    <p style="margin-bottom: 0.75rem;">3D 프린팅 및 형상 처리를 위한 3MF 파일 분할 및 제어 웹 플랫폼입니다. 사용자가 웹상에서 바로 복잡한 3D 모델 데이터를 파싱하고 원하는 형태로 분할할 수 있도록 지원합니다.</p>
+                    <p style="margin-bottom: 0.75rem;">웹 브라우저 상에서 3D 모델(3MF) 데이터를 파싱하고 분할/제어할 수 있는 플랫폼입니다.</p>
                     <p style="font-size: 0.85rem; margin-bottom: 1.5rem;">
                         <i class="fab fa-reddit" style="color: #ff4500;"></i> <a href="https://www.reddit.com/r/BambuLab/comments/1u0bobr/browserbased_tool_for_splitting_painted_3mf/" target="_blank" style="color: #60a5fa; text-decoration: underline;">관련 Reddit 게시글에서 더 많은 정보 보기</a>
                     </p>
@@ -159,7 +130,7 @@
 
                 <div class="glass-card project-card">
                     <h3><i class="fas fa-gamepad" style="margin-right: 0.5rem;"></i> 2playervs</h3>
-                    <p style="margin-bottom: 1.5rem;">웹 기반 실시간 2인용 대전 게임 및 인터랙티브 웹 서비스입니다. 별도의 설치 없이 브라우저 상에서 바로 사용자들이 즉각적인 상호작용과 경쟁을 즐길 수 있도록 구현되었습니다.</p>
+                    <p style="margin-bottom: 1.5rem;">별도 설치 없이 즐길 수 있는 웹 기반 실시간 2인용 인터랙티브 대전 게임 서비스입니다.</p>
                     <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
                         <a href="https://2playervs.com" target="_blank" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.4rem 0.8rem; width: auto;"><i class="fas fa-external-link-alt" style="margin-right: 0.5rem;"></i>웹사이트 방문</a>
                     </div>
@@ -167,7 +138,7 @@
 
                 <div class="glass-card project-card">
                     <h3><i class="fas fa-car-crash" style="margin-right: 0.5rem;"></i> crashviewer</h3>
-                    <p style="margin-bottom: 1.5rem;">충돌 해석 데이터 분석 및 3D 시각화를 위한 전용 뷰어 프로젝트입니다. 복잡한 충돌 시뮬레이션 결과와 구조 변형 데이터를 직관적으로 렌더링하고 분석할 수 있는 환경을 제공합니다.</p>
+                    <p style="margin-bottom: 1.5rem;">복잡한 충돌 시뮬레이션 결과와 구조 변형 데이터를 분석하고 직관적으로 렌더링하는 3D 시각화 전용 뷰어입니다.</p>
                     <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
                         <span class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.4rem 0.8rem; width: auto; opacity: 0.6; cursor: not-allowed;"><i class="fas fa-lock" style="margin-right: 0.5rem;"></i>Private Repository</span>
                     </div>
@@ -175,7 +146,7 @@
 
                 <div class="glass-card project-card">
                     <h3 style="display: flex; align-items: center;"><img src="https://textfight.io/favicon.ico" alt="TextFight Logo" style="width: 1.5rem; height: 1.5rem; margin-right: 0.5rem; border-radius: 4px;"> TextFight</h3>
-                    <p style="margin-bottom: 1.5rem;">텍스트 기반의 인터랙티브 대전 애플리케이션 프로젝트입니다. 실시간 로직 처리와 타이핑/텍스트 인터페이스를 결합한 색다른 형태의 게임을 제공합니다.</p>
+                    <p style="margin-bottom: 1.5rem;">실시간 로직 처리와 타이핑 인터페이스를 결합한 텍스트 기반의 인터랙티브 대전 게임입니다.</p>
                     <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
                         <a href="https://textfight.io" target="_blank" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.4rem 0.8rem; width: auto;"><i class="fas fa-external-link-alt" style="margin-right: 0.5rem;"></i>웹사이트 방문</a>
                     </div>
@@ -183,7 +154,7 @@
 
                 <div class="glass-card project-card">
                     <h3><i class="fas fa-calendar-alt" style="margin-right: 0.5rem;"></i> LunarGoogleCalendar</h3>
-                    <p style="margin-bottom: 1.5rem;">음력 생일 및 기념일을 구글 캘린더에 간편하게 추가하고 동기화할 수 있도록 돕는 크롬 확장 프로그램입니다. 사용자 편의성을 높이기 위한 유틸리티 도구입니다.</p>
+                    <p style="margin-bottom: 1.5rem;">음력 생일 및 기념일을 구글 캘린더에 간편하게 추가하고 동기화할 수 있는 크롬 확장 프로그램입니다.</p>
                     <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
                         <a href="https://chromewebstore.google.com/detail/%EC%9D%8C%EB%A0%A5-%EC%83%9D%EC%9D%BC-%EA%B5%AC%EA%B8%80%EC%BA%98%EB%A6%B0%EB%8D%94-%EC%B6%94%EA%B0%80%EA%B8%B0/mgogeiiklhbnfgbpmpbebaidhgngikhj?hl=ko&utm_source=ext_sidebar" target="_blank" class="btn btn-primary" style="font-size: 0.85rem; padding: 0.4rem 0.8rem; width: auto;"><i class="fab fa-chrome" style="margin-right: 0.5rem;"></i>Chrome 확장 앱</a>
                         <a href="https://github.com/utj947/lunargooglecalendar" target="_blank" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.4rem 0.8rem; width: auto;"><i class="fab fa-github" style="margin-right: 0.5rem;"></i>GitHub 레포지토리</a>
@@ -199,7 +170,7 @@
             <div class="projects-grid">
                 <div class="glass-card project-card">
                     <h3><i class="fas fa-cube" style="margin-right: 0.5rem;"></i> MakerWorld 3D Models</h3>
-                    <p style="margin-bottom: 1.5rem;">개인적으로 모델링한 3D 프린팅용 형상 및 창작물들을 업로드하고 공유하는 갤러리 및 프로필 공간입니다.</p>
+                    <p style="margin-bottom: 1.5rem;">개인적으로 디자인한 3D 모델링 창작물을 공유하는 공간입니다.</p>
                     <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
                         <a href="https://makerworld.com/ko/@TaeJoo" target="_blank" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.4rem 0.8rem; width: auto;"><i class="fas fa-external-link-alt" style="margin-right: 0.5rem;"></i>MakerWorld 방문</a>
                     </div>
