@@ -370,13 +370,51 @@ footer {
 
 /* Responsive */
 @media (max-width: 992px) {
+  .hero {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 3rem;
+    padding-top: 4rem;
+  }
   .hero h1 { font-size: 3.5rem; }
-  .profile-wrapper { display: none; }
+  
+  .profile-wrapper { 
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+    animation: fadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+  }
+
+  .cta-group {
+    justify-content: center;
+  }
+
   .vision-grid { grid-template-columns: 1fr; gap: 2rem; }
 }
 
 @media (max-width: 768px) {
+  .hero { padding-top: 2rem; gap: 2rem; }
   .hero h1 { font-size: 2.5rem; }
   .hero p { font-size: 1.125rem; }
   .section-title { font-size: 2rem; }
+  
+  .profile-wrapper {
+    width: 200px;
+    height: 200px;
+  }
+
+  .cta-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+  }
 }
